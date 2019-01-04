@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'test_section.dart';
 import 'row_card.dart';
+import 'user_julia.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Minimal Clean UI',
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       home: MyHomePage(title: 'Flutter Minimal Clean UI'),
     );
@@ -103,6 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 SizedBox(width: 25.0),
+                listItem('assets/images/user1/julia.jpg', 'julia', true, UserJulia()),
+                SizedBox(width: 25.0),
                 listItem('assets/images/chris.jpg', 'Chris', true),
                 SizedBox(width: 25.0),
                 listItem('assets/images/hugh.jpg', 'Hugh', false),
@@ -114,6 +117,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           //TestSection(), // a test section imported as separate widget test_section.dart
+          // TODO new container for redesign : row containing 2 columns
+          Container(
+            child: Row(
+              children: <Widget>[
+                Column(),
+                Column(),
+              ],
+            )
+          ),
           Container(
             height: 350.0,
             padding: EdgeInsets.only(left: 10.0, right: 10.0),
@@ -170,10 +182,17 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget listItem(String imgPath, String name, bool available) {
+  Widget listItem(String imgPath, String name, bool available, [Widget userPage]) {
     return Column(
       children: <Widget>[
-        Container(
+        InkWell(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => userPage));
+          },
+          child: Container(
             height: 70.0,
             width: 70.0,
             decoration: BoxDecoration(
@@ -182,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.cover
                 )
             ),
-        ),
+        )),
         SizedBox(height: 7.0),
         Row(
           children: <Widget>[

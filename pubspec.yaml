@@ -46,6 +46,7 @@ flutter:
    - assets/images/letter.jpeg
    - assets/images/window.jpeg
    - assets/images/cactus.jpeg
+   - assets/images/user1/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -63,8 +64,8 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
-        #- asset: fonts/Montserrat-Medium.ttf
-  #         style: italic
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
