@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'photo_card.dart';
 
 
 class UserJulia extends StatelessWidget {
@@ -130,6 +130,39 @@ class UserJulia extends StatelessWidget {
                       )
                   ]
               ),
+              SizedBox(
+                  height: 10
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  PhotoCard('assets/images/user1/photo1-red-deers.jpg'),
+                  PhotoCard('assets/images/user1/photo2-wall-decal.jpg'),
+                  PhotoCard('assets/images/user1/photo3-wall-decoration.jpg')
+                ],
+              ),
+              SizedBox(
+                  height: 15
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  PhotoCard('assets/images/user1/photo4-red-chair.jpg'),
+                  PhotoCard('assets/images/user1/photo5-pink-window.jpg'),
+                  PhotoCard('assets/images/user1/photo6-decors.jpg')
+                ],
+              ),
+              SizedBox(
+                height: 50
+              ),
+              Text("Summary",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black
+                  ))
             ],
           ),
         ],
